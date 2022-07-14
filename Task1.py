@@ -4,20 +4,20 @@
 # 1234567891011121
 
 def card(cardnum, cvc, pin):
-    print(f'\nНомер карты: {cardnum[0:4] + " **** **** ****"}\nCVC-код: ###\nPIN-код: {"&&&" + pin[3]}')
 
+    while len(cardnum) != 16:
+        cardnum = input('Введите номер карты: ')
+
+    while len(cvc) != 3:
+        cvc = input('Введите CVC: ')
+
+    while len(pin) != 4:
+        pin = input('Введите PIN: ')
+
+    print(f'\nНомер карты: {cardnum[0:4] + " **** **** ****"}\nCVC-код: ###\nPIN-код: {"&&&" + pin[3]}')
 
 cardnum = ''
 cvc = ''
 pin = ''
-
-while len(cardnum) != 16:
-    cardnum = input('Введите номер карты: ')
-
-while len(cvc) != 3:
-    cvc = input('Введите CVC: ')
-
-while len(pin) != 4:
-    pin = input('Введите PIN: ')
 
 card(cardnum, cvc, pin)
