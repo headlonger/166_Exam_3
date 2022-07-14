@@ -3,7 +3,7 @@
 # ###, и PIN-код в виде &&&0 (вместо 0 последняя цифра).
 # 1234567891011121
 
-def card(cardnum, cvc, pin):
+def card(cardnum='', cvc='', pin=''):
 
     while len(cardnum) != 16:
         cardnum = input('Введите номер карты: ')
@@ -16,8 +16,5 @@ def card(cardnum, cvc, pin):
 
     print(f'\nНомер карты: {cardnum[0:4] + " **** **** ****"}\nCVC-код: ###\nPIN-код: {"&&&" + pin[3]}')
 
-cardnum = ''
-cvc = ''
-pin = ''
 
-card(cardnum, cvc, pin)
+card()
